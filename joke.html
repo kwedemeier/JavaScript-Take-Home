@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="jokeStyles.css" />
-	
 	<style>
 		body {
 			background: url("standup.jpg") no-repeat center center fixed; 
@@ -53,21 +51,25 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body onload="main()">
-	
-
-	<h1>Gaslight Cafe</h1>
 	<img src="gaslight.webp" alt="Gaslight Cafe">
 	<div id="main">
-		<span>By Type:
+		<span>By Type:</span>
 		<select id="type"  class="inputs" onchange="sort()">
 			<option></option>
 			<option id="G">General</option>
 			<option id="K">Knock-knock</option>
 		</select>
+		<br />
+		<br />
+		<span>Any Suggestions?</span>
+		<input type="text" id="filter" class="inputs" />
+		<input type="button" id="filterSearch" class="inputs" value="Try This" onclick="filterJokes()"/>
+		
 		<div>&nbsp;</div>
 		<p id="joke" class="jokes"></p>
 		<input type="button" id="ansPlease" class="inputs" value="Answer Please!" onclick="showAns()"/>
 		<div id="answer" class="jokes"></div>
+		
 		<div>&nbsp;</div>
 		<input type="button" id="nextJoke" class="inputs" value="Next Please" onclick="nextId()" />
 	</div>
