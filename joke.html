@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="jokeStyles.css">
-</head>
-<body>
-<script src="jokes.js"></script>
+	<link rel="stylesheet" type="text/css" href="jokeStyles.css" />
+	
+	<style>
+		body {
+			background: url("standup.jpg") no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			background-position: center;
+			background-color: MidnightBlue;
+			color: Lavender;
+			font: bold 25px helvetica, arial, sans-serif;
+			text-align: center;
+			text-shadow: 2px 2px 4px #000000;
+		}
 
+		.joke {
+			font-variant: small-caps;
+		}
+
+		select{
+			padding: 5px !important;
+		}
+
+		h1 {
+			text-align: center;
+			text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+		}
+		#main {
+			margin: 50px auto;
+			width: 75%
+		}
+		.jokes {
+			font-style: italic;
+		}
+		#answer {
+			visibility: hidden;
+			padding-top: 50px;
+		}
+		.inputs {
+			background-color: white;
+			color: black;
+			padding: 7px 14px;
+			border-radius:4px;
+			border:1px solid #AAAAAA;
+		}
+	</style>
+	<script type="text/javascript" src="jokes.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body onload="main()">
+	
+
+	<h1>Gaslight Cafe</h1>
+	<img src="gaslight.webp" alt="Gaslight Cafe">
+	<div id="main">
+		<span>By Type:
+		<select id="type"  class="inputs" onchange="sort()">
+			<option></option>
+			<option id="G">General</option>
+			<option id="K">Knock-knock</option>
+		</select>
+		<div>&nbsp;</div>
+		<p id="joke" class="jokes"></p>
+		<input type="button" id="ansPlease" class="inputs" value="Answer Please!" onclick="showAns()"/>
+		<div id="answer" class="jokes"></div>
+		<div>&nbsp;</div>
+		<input type="button" id="nextJoke" class="inputs" value="Next Please" onclick="nextId()" />
+	</div>
 </body>
 </html>
